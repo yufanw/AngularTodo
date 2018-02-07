@@ -1,0 +1,18 @@
+<div>
+    <h1>todo list</h1>
+    <h5>Click on todo to remove</h5>
+    <input
+        ng-model="$ctrl.newTodo"
+        ng-keyup="$event.keyCode === 13 && $ctrl.addTodo()"
+    >
+    <button ng-click="$ctrl.addTodo()">add</button>
+    <button ng-click="$ctrl.undoRemove()">undo remove</button>
+    <ul>
+      <entry
+        ng-click="$ctrl.markComplete($index)"
+        ng-repeat="todo in $ctrl.todos track by $index"
+        todo="todo"
+      ></entry>
+    </ul>
+    <pre></pre>
+</div>
